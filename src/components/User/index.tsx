@@ -1,5 +1,7 @@
-import React from 'react';
+import { deleteUser } from '../../redux/features/homeSlice';
 import { FiDelete } from 'react-icons/fi';
+import { useDispatch } from 'react-redux';
+import './index.css';
 
 interface UserProps {
   user: {
@@ -15,9 +17,12 @@ interface UserProps {
 
 const User = ({ user }: UserProps) => {
   const { id, name, image, age, country, hobby, job } = user;
+
+  const dispatch = useDispatch();
+
   return (
     <div key={id} className='user'>
-      <img src={image} alt={name} />
+      <img src={image} alt={name} className='image' />
       <h2>{name}</h2>
       <p>
         <span className='highlight'>{age}</span> years old.
@@ -32,7 +37,7 @@ const User = ({ user }: UserProps) => {
         I enjoy <span className='highlight'> {hobby}</span>.
       </p>
       <div className='delete'>
-        <FiDelete className='icon' />
+        <FiDelete className='icon' onClick={() => dispatch(deleteUser(id))} />
       </div>
     </div>
   );

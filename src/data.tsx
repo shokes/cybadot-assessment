@@ -8,7 +8,7 @@ const users = [
   {
     id: 1,
     name: 'John',
-    age: 25,
+    age: 31,
     job: 'Frontend Developer',
     country: 'Spain',
     hobby: 'Running',
@@ -18,7 +18,7 @@ const users = [
   {
     id: 2,
     name: 'Susan',
-    age: 24,
+    age: 30,
     job: 'Backend Developer',
     country: 'Scotland',
     hobby: 'Reading',
