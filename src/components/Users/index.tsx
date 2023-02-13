@@ -2,6 +2,7 @@ import User from '../User';
 import { useSelector } from 'react-redux/es/exports';
 import { RootState } from '../../redux/store';
 import './index.css';
+import { Zoom } from 'react-awesome-reveal';
 
 const Users = () => {
   const { users } = useSelector((store: RootState) => store.home);
@@ -11,9 +12,11 @@ const Users = () => {
   }
   return (
     <div className='users'>
-      {users.map((user) => {
-        return <User user={user} key={user.id} />;
-      })}
+      <Zoom cascade triggerOnce duration={600}>
+        {users.map((user) => {
+          return <User user={user} key={user.id} />;
+        })}
+      </Zoom>
     </div>
   );
 };
