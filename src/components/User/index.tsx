@@ -21,7 +21,7 @@ const User = ({ user }: UserProps) => {
   const dispatch = useDispatch();
 
   return (
-    <div key={id} className='user'>
+    <div className='user'>
       <img src={image} alt={name} className='image' />
       <h2>{name}</h2>
       <p>

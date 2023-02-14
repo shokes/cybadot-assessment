@@ -25,7 +25,9 @@ const homeSlice = createSlice({
       );
     },
     usersInAgeRange: (state) => {
-      state.users = users.filter((user) => user.age >= 22 && user.age <= 25);
+      state.users = state.users.filter(
+        (user) => user.age >= 22 && user.age <= 25
+      );
     },
   },
 });
